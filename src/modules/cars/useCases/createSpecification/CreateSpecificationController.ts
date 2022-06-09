@@ -18,5 +18,3 @@ class CreateSpecificationController {
 }
 
 export { CreateSpecificationController };
-
-export class CreateSpecificationsController {}
