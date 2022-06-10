@@ -1,8 +1,9 @@
-import { inject } from 'tsyringe';
+import { inject, injectable } from 'tsyringe';
 
 import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
 import { IUsersRepository } from '../../repositories/IUsersRepository';
 
+@injectable()
 class CreateUserUseCase {
   constructor(
     @inject('UsersRepository')
@@ -13,14 +14,12 @@ class CreateUserUseCase {
     name,
     password,
     email,
-    username,
     driver_license,
   }: ICreateUserDTO): Promise<void> {
     return this.userRepository.create({
       name,
       password,
       email,
-      username,
       driver_license,
     });
   }
