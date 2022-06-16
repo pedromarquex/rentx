@@ -4,7 +4,7 @@ services:
   database:
     image: postgres
     container_name: database
-    restart: always
+    restart: on-failure
     ports:
       - "5432:5432"
     environment:
